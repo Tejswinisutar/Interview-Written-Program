@@ -1,0 +1,18 @@
+====2nd Highest Salary Query====
+=> 
+   SELECT MAX(Salary)AS SecondHighestSalary
+   FROM Employee
+   WHERE Salary < (SELECT MAX(Salary) FROM
+   Employee);
+
+*********************************************
+====3rd Highest Salary Query====
+=>
+  SELECT MAX(Salary)AS ThirdHighestSalary
+  FROM Employee
+  WHERE Salary < (SELECT MAX(Salary)
+  FROM Employee
+  WHERE Salary < (SELECT MAX(Salary)
+  FROM Employee));
+
+  
